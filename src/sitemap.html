@@ -1,0 +1,9 @@
+---
+layout: layouts/sitemap.html
+title: Site Map
+---
+<ul>
+{% for post in collections.all %}
+  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
+{% endfor %}
+</ul>
