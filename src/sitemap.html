@@ -1,9 +1,21 @@
 ---
-layout: layouts/sitemap.html
+layout: layouts/default.html
+eleventyExcludeFromCollections: true
 title: Site Map
 ---
-<ul>
-{% for post in collections.all %}
-  <li><a href="{{ post.url }}">{{ post.url }}</a></li>
-{% endfor %}
-</ul>
+<div class="container">
+  <h1 class="text-center">Site Map</h1>
+  <div class="row">
+    {% set per_row = 2 %}
+    {% for post in collections.all -%}
+      <div class="col">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+      </div>
+
+      {% if loop.index % per_row == 0 and not loop.last -%}
+        </div>
+        <div class="row">
+      {% endif -%}
+    {% endfor -%}
+  </div>
+</div>

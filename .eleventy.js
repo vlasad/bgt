@@ -4,7 +4,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_redirects");
 
   return {
-    markdownTemplateEngine: "njk",
+    markdownTemplateEngine: "false",
     htmlTemplateEngine: "njk",
     dir: {
       input: "src"
